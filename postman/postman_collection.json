@@ -1,0 +1,222 @@
+{
+  "info": {
+    "name": "Tech Challenge 2 — API REST",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8080",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Tipos de Usuario",
+      "item": [
+        {
+          "name": "Criar tipo de usuário",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{base_url}}/api/v1/tipos-usuario", "host": ["{{base_url}}"], "path": ["api", "v1", "tipos-usuario"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Dono de Restaurante\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Listar todos os tipos de usuário",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{base_url}}/api/v1/tipos-usuario", "host": ["{{base_url}}"], "path": ["api", "v1", "tipos-usuario"] }
+          }
+        },
+        {
+          "name": "Buscar tipo de usuário por ID",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{base_url}}/api/v1/tipos-usuario/1", "host": ["{{base_url}}"], "path": ["api", "v1", "tipos-usuario", "1"] }
+          }
+        },
+        {
+          "name": "Atualizar tipo de usuário",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{base_url}}/api/v1/tipos-usuario/1", "host": ["{{base_url}}"], "path": ["api", "v1", "tipos-usuario", "1"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Cliente\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Deletar tipo de usuário",
+          "request": {
+            "method": "DELETE",
+            "url": { "raw": "{{base_url}}/api/v1/tipos-usuario/1", "host": ["{{base_url}}"], "path": ["api", "v1", "tipos-usuario", "1"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Usuarios",
+      "item": [
+        {
+          "name": "Criar usuário",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{base_url}}/api/v1/usuarios", "host": ["{{base_url}}"], "path": ["api", "v1", "usuarios"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"João Silva\",\n  \"email\": \"joao.silva@email.com\",\n  \"senha\": \"senha123\",\n  \"tipoUsuarioId\": 1\n}"
+            }
+          }
+        },
+        {
+          "name": "Listar todos os usuários",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{base_url}}/api/v1/usuarios", "host": ["{{base_url}}"], "path": ["api", "v1", "usuarios"] }
+          }
+        },
+        {
+          "name": "Buscar usuário por ID",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{base_url}}/api/v1/usuarios/1", "host": ["{{base_url}}"], "path": ["api", "v1", "usuarios", "1"] }
+          }
+        },
+        {
+          "name": "Atualizar usuário",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{base_url}}/api/v1/usuarios/1", "host": ["{{base_url}}"], "path": ["api", "v1", "usuarios", "1"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"João Silva Atualizado\",\n  \"email\": \"joao.novo@email.com\",\n  \"senha\": \"novaSenha456\",\n  \"tipoUsuarioId\": 1\n}"
+            }
+          }
+        },
+        {
+          "name": "Deletar usuário",
+          "request": {
+            "method": "DELETE",
+            "url": { "raw": "{{base_url}}/api/v1/usuarios/1", "host": ["{{base_url}}"], "path": ["api", "v1", "usuarios", "1"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Restaurantes",
+      "item": [
+        {
+          "name": "Criar restaurante",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{base_url}}/api/v1/restaurantes", "host": ["{{base_url}}"], "path": ["api", "v1", "restaurantes"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Cantina da Nonna\",\n  \"tipoCozinha\": \"Italiana\",\n  \"endereco\": \"Rua das Flores, 123 - São Paulo, SP\",\n  \"horarioFuncionamento\": \"11:00 - 22:00\",\n  \"donoRestauranteId\": 1\n}"
+            }
+          }
+        },
+        {
+          "name": "Listar todos os restaurantes",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{base_url}}/api/v1/restaurantes", "host": ["{{base_url}}"], "path": ["api", "v1", "restaurantes"] }
+          }
+        },
+        {
+          "name": "Buscar restaurante por ID",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{base_url}}/api/v1/restaurantes/1", "host": ["{{base_url}}"], "path": ["api", "v1", "restaurantes", "1"] }
+          }
+        },
+        {
+          "name": "Atualizar restaurante",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{base_url}}/api/v1/restaurantes/1", "host": ["{{base_url}}"], "path": ["api", "v1", "restaurantes", "1"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Cantina da Nonna Atualizada\",\n  \"tipoCozinha\": \"Italiana Contemporânea\",\n  \"endereco\": \"Avenida Paulista, 1000 - São Paulo, SP\",\n  \"horarioFuncionamento\": \"12:00 - 23:00\",\n  \"donoRestauranteId\": 1\n}"
+            }
+          }
+        },
+        {
+          "name": "Deletar restaurante",
+          "request": {
+            "method": "DELETE",
+            "url": { "raw": "{{base_url}}/api/v1/restaurantes/1", "host": ["{{base_url}}"], "path": ["api", "v1", "restaurantes", "1"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Itens do Cardapio",
+      "item": [
+        {
+          "name": "Criar item de cardápio",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{base_url}}/api/v1/itens-cardapio", "host": ["{{base_url}}"], "path": ["api", "v1", "itens-cardapio"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Pizza Margherita\",\n  \"descricao\": \"Pizza clássica com molho de tomate, queijo mozzarella e manjericão fresco\",\n  \"preco\": 45.90,\n  \"categoria\": \"PRATO_PRINCIPAL\",\n  \"restauranteId\": 1\n}"
+            }
+          }
+        },
+        {
+          "name": "Listar todos os itens de cardápio",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{base_url}}/api/v1/itens-cardapio", "host": ["{{base_url}}"], "path": ["api", "v1", "itens-cardapio"] }
+          }
+        },
+        {
+          "name": "Buscar item de cardápio por ID",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{base_url}}/api/v1/itens-cardapio/1", "host": ["{{base_url}}"], "path": ["api", "v1", "itens-cardapio", "1"] }
+          }
+        },
+        {
+          "name": "Listar itens por restaurante",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{base_url}}/api/v1/itens-cardapio/restaurante/1", "host": ["{{base_url}}"], "path": ["api", "v1", "itens-cardapio", "restaurante", "1"] }
+          }
+        },
+        {
+          "name": "Atualizar item de cardápio",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{base_url}}/api/v1/itens-cardapio/1", "host": ["{{base_url}}"], "path": ["api", "v1", "itens-cardapio", "1"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Pizza Margherita Especial\",\n  \"descricao\": \"Pizza com molho caseiro, queijo mozzarella de búfala e manjericão fresco\",\n  \"preco\": 55.90,\n  \"categoria\": \"PRATO_PRINCIPAL\",\n  \"restauranteId\": 1\n}"
+            }
+          }
+        },
+        {
+          "name": "Deletar item de cardápio",
+          "request": {
+            "method": "DELETE",
+            "url": { "raw": "{{base_url}}/api/v1/itens-cardapio/1", "host": ["{{base_url}}"], "path": ["api", "v1", "itens-cardapio", "1"] }
+          }
+        }
+      ]
+    }
+  ]
+}
