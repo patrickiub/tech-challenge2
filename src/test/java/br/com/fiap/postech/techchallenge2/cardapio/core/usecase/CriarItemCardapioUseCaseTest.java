@@ -26,8 +26,8 @@ class CriarItemCardapioUseCaseTest {
 
     @Test
     void deveCriarItemCardapioComSucesso() {
-        ItemCardapio entrada = new ItemCardapio(null, "Coxinha", "Coxinha de frango", new BigDecimal("8.50"), CategoriaItemCardapio.ENTRADA, 1L);
-        ItemCardapio salvo = new ItemCardapio(1L, "Coxinha", "Coxinha de frango", new BigDecimal("8.50"), CategoriaItemCardapio.ENTRADA, 1L);
+        ItemCardapio entrada = new ItemCardapio(null, "Coxinha", "Coxinha de frango", new BigDecimal("8.50"), CategoriaItemCardapio.ENTRADA, 1L, null);
+        ItemCardapio salvo = new ItemCardapio(1L, "Coxinha", "Coxinha de frango", new BigDecimal("8.50"), CategoriaItemCardapio.ENTRADA, 1L, null);
         when(itemCardapioGateway.salvar(entrada)).thenReturn(salvo);
 
         ItemCardapio resultado = useCase.executar(entrada);

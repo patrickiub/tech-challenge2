@@ -27,8 +27,8 @@ class ListarItensCardapioUseCaseTest {
     @Test
     void deveListarTodosItens() {
         List<ItemCardapio> itens = List.of(
-                new ItemCardapio(1L, "Coxinha", "Frango", new BigDecimal("8.50"), CategoriaItemCardapio.ENTRADA, 1L),
-                new ItemCardapio(2L, "Feijoada", "Completa", new BigDecimal("45.90"), CategoriaItemCardapio.PRATO_PRINCIPAL, 1L)
+                new ItemCardapio(1L, "Coxinha", "Frango", new BigDecimal("8.50"), CategoriaItemCardapio.ENTRADA, 1L, null),
+                new ItemCardapio(2L, "Feijoada", "Completa", new BigDecimal("45.90"), CategoriaItemCardapio.PRATO_PRINCIPAL, 1L, null)
         );
         when(itemCardapioGateway.listarTodos()).thenReturn(itens);
 

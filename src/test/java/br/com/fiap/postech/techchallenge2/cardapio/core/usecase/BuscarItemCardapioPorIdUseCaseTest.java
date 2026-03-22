@@ -29,7 +29,7 @@ class BuscarItemCardapioPorIdUseCaseTest {
     @Test
     void deveBuscarItemPorIdComSucesso() {
         Long id = 1L;
-        ItemCardapio item = new ItemCardapio(id, "Coxinha", "Coxinha de frango", new BigDecimal("8.50"), CategoriaItemCardapio.ENTRADA, 1L);
+        ItemCardapio item = new ItemCardapio(id, "Coxinha", "Coxinha de frango", new BigDecimal("8.50"), CategoriaItemCardapio.ENTRADA, 1L, null);
         when(itemCardapioGateway.buscarPorId(id)).thenReturn(Optional.of(item));
 
         ItemCardapio resultado = useCase.executar(id);

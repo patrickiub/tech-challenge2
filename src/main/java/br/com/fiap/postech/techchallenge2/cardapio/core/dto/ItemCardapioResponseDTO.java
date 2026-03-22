@@ -11,7 +11,8 @@ public record ItemCardapioResponseDTO(
         String descricao,
         BigDecimal preco,
         CategoriaItemCardapio categoria,
-        Long restauranteId
+        Long restauranteId,
+        String fotoPath
 ) {
 
     public static ItemCardapioResponseDTO from(ItemCardapio item) {
@@ -21,7 +22,8 @@ public record ItemCardapioResponseDTO(
                 item.getDescricao(),
                 item.getPreco(),
                 item.getCategoria(),
-                item.getRestauranteId()
+                item.getRestauranteId(),
+                item.getFotoPath()
         );
     }
 }

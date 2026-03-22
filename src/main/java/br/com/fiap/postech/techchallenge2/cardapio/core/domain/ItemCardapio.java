@@ -18,4 +18,5 @@ public class ItemCardapio {
     private BigDecimal preco;
     private CategoriaItemCardapio categoria;
     private Long restauranteId;
+    private String fotoPath;
 }
