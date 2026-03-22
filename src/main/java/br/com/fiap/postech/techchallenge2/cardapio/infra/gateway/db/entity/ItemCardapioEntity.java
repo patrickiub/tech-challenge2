@@ -38,4 +38,7 @@ public class ItemCardapioEntity {
     @ManyToOne
     @JoinColumn(name = "restaurante_id", nullable = false)
     private RestauranteEntity restaurante;
+
+    @Column(length = 500)
+    private String fotoPath;
 }

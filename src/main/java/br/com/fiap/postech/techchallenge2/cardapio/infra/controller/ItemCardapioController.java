@@ -52,7 +52,7 @@ public class ItemCardapioController {
     })
     public ItemCardapioResponseDTO criar(@Valid @RequestBody ItemCardapioRequestDTO dto) {
         ItemCardapio item = new ItemCardapio(null, dto.nome(), dto.descricao(),
-                dto.preco(), dto.categoria(), dto.restauranteId());
+                dto.preco(), dto.categoria(), dto.restauranteId(), dto.fotoPath());
         return ItemCardapioResponseDTO.from(criarItemCardapioUseCase.executar(item));
     }
 
@@ -96,7 +96,7 @@ public class ItemCardapioController {
     })
     public ItemCardapioResponseDTO atualizar(@Parameter(description = "ID do item de cardápio", required = true) @PathVariable Long id, @Valid @RequestBody ItemCardapioRequestDTO dto) {
         ItemCardapio item = new ItemCardapio(id, dto.nome(), dto.descricao(),
-                dto.preco(), dto.categoria(), dto.restauranteId());
+                dto.preco(), dto.categoria(), dto.restauranteId(), dto.fotoPath());
         return ItemCardapioResponseDTO.from(atualizarItemCardapioUseCase.executar(id, item));
     }
 

@@ -87,7 +87,7 @@ class ItemCardapioControllerIT {
     void deveBuscarItemCardapioPorId() throws Exception {
         var restaurante = restauranteRepository.findById(restauranteId).orElseThrow();
         var item = itemCardapioRepository.save(new ItemCardapioEntity(
-                null, "Suco de Laranja", "Suco natural", new BigDecimal("8.00"), CategoriaItemCardapio.BEBIDA, restaurante
+                null, "Suco de Laranja", "Suco natural", new BigDecimal("8.00"), CategoriaItemCardapio.BEBIDA, restaurante, null
         ));
 
         mockMvc.perform(get("/api/v1/itens-cardapio/{id}", item.getId()))
@@ -100,8 +100,8 @@ class ItemCardapioControllerIT {
     @Test
     void deveListarTodosItensCardapio() throws Exception {
         var restaurante = restauranteRepository.findById(restauranteId).orElseThrow();
-        itemCardapioRepository.save(new ItemCardapioEntity(null, "Pizza", "Pizza margherita", new BigDecimal("35.00"), CategoriaItemCardapio.PRATO_PRINCIPAL, restaurante));
-        itemCardapioRepository.save(new ItemCardapioEntity(null, "Sorvete", "Sorvete de chocolate", new BigDecimal("12.00"), CategoriaItemCardapio.SOBREMESA, restaurante));
+        itemCardapioRepository.save(new ItemCardapioEntity(null, "Pizza", "Pizza margherita", new BigDecimal("35.00"), CategoriaItemCardapio.PRATO_PRINCIPAL, restaurante, null));
+        itemCardapioRepository.save(new ItemCardapioEntity(null, "Sorvete", "Sorvete de chocolate", new BigDecimal("12.00"), CategoriaItemCardapio.SOBREMESA, restaurante, null));
 
         mockMvc.perform(get("/api/v1/itens-cardapio"))
                 .andExpect(status().isOk())
@@ -111,8 +111,8 @@ class ItemCardapioControllerIT {
     @Test
     void deveListarItensPorRestaurante() throws Exception {
         var restaurante = restauranteRepository.findById(restauranteId).orElseThrow();
-        itemCardapioRepository.save(new ItemCardapioEntity(null, "Pão de Alho", "Entrada especial", new BigDecimal("10.00"), CategoriaItemCardapio.ENTRADA, restaurante));
-        itemCardapioRepository.save(new ItemCardapioEntity(null, "Água Mineral", "500ml", new BigDecimal("5.00"), CategoriaItemCardapio.BEBIDA, restaurante));
+        itemCardapioRepository.save(new ItemCardapioEntity(null, "Pão de Alho", "Entrada especial", new BigDecimal("10.00"), CategoriaItemCardapio.ENTRADA, restaurante, null));
+        itemCardapioRepository.save(new ItemCardapioEntity(null, "Água Mineral", "500ml", new BigDecimal("5.00"), CategoriaItemCardapio.BEBIDA, restaurante, null));
 
         mockMvc.perform(get("/api/v1/itens-cardapio/restaurante/{restauranteId}", restauranteId))
                 .andExpect(status().isOk())
@@ -123,7 +123,7 @@ class ItemCardapioControllerIT {
     void deveAtualizarItemCardapio() throws Exception {
         var restaurante = restauranteRepository.findById(restauranteId).orElseThrow();
         var item = itemCardapioRepository.save(new ItemCardapioEntity(
-                null, "Nome Antigo", "Desc antiga", new BigDecimal("20.00"), CategoriaItemCardapio.LANCHE, restaurante
+                null, "Nome Antigo", "Desc antiga", new BigDecimal("20.00"), CategoriaItemCardapio.LANCHE, restaurante, null
         ));
 
         var request = Map.of(
@@ -146,7 +146,7 @@ class ItemCardapioControllerIT {
     void deveDeletarItemCardapio() throws Exception {
         var restaurante = restauranteRepository.findById(restauranteId).orElseThrow();
         var item = itemCardapioRepository.save(new ItemCardapioEntity(
-                null, "Item Para Deletar", "Desc", new BigDecimal("15.00"), CategoriaItemCardapio.SOBREMESA, restaurante
+                null, "Item Para Deletar", "Desc", new BigDecimal("15.00"), CategoriaItemCardapio.SOBREMESA, restaurante, null
         ));
 
         mockMvc.perform(delete("/api/v1/itens-cardapio/{id}", item.getId()))

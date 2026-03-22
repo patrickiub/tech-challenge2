@@ -28,8 +28,8 @@ class ListarItensCardapioPorRestauranteUseCaseTest {
     void deveListarItensPorRestaurante() {
         Long restauranteId = 1L;
         List<ItemCardapio> itens = List.of(
-                new ItemCardapio(1L, "Coxinha", "Frango", new BigDecimal("8.50"), CategoriaItemCardapio.ENTRADA, restauranteId),
-                new ItemCardapio(2L, "Feijoada", "Completa", new BigDecimal("45.90"), CategoriaItemCardapio.PRATO_PRINCIPAL, restauranteId)
+                new ItemCardapio(1L, "Coxinha", "Frango", new BigDecimal("8.50"), CategoriaItemCardapio.ENTRADA, restauranteId, null),
+                new ItemCardapio(2L, "Feijoada", "Completa", new BigDecimal("45.90"), CategoriaItemCardapio.PRATO_PRINCIPAL, restauranteId, null)
         );
         when(itemCardapioGateway.listarPorRestaurante(restauranteId)).thenReturn(itens);
 

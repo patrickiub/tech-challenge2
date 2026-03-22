@@ -30,7 +30,8 @@ public class ItemCardapioGatewayImpl implements ItemCardapioGateway {
                 item.getDescricao(),
                 item.getPreco(),
                 item.getCategoria(),
-                restaurante
+                restaurante,
+                item.getFotoPath()
         );
     }
 
@@ -41,7 +42,8 @@ public class ItemCardapioGatewayImpl implements ItemCardapioGateway {
                 entity.getDescricao(),
                 entity.getPreco(),
                 entity.getCategoria(),
-                entity.getRestaurante().getId()
+                entity.getRestaurante().getId(),
+                entity.getFotoPath()
         );
     }
 

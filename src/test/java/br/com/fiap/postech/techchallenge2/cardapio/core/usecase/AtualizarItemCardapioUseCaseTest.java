@@ -29,8 +29,8 @@ class AtualizarItemCardapioUseCaseTest {
     @Test
     void deveAtualizarItemCardapioComSucesso() {
         Long id = 1L;
-        ItemCardapio entrada = new ItemCardapio(null, "Coxinha Especial", "Coxinha premium", new BigDecimal("10.00"), CategoriaItemCardapio.ENTRADA, 1L);
-        ItemCardapio atualizado = new ItemCardapio(id, "Coxinha Especial", "Coxinha premium", new BigDecimal("10.00"), CategoriaItemCardapio.ENTRADA, 1L);
+        ItemCardapio entrada = new ItemCardapio(null, "Coxinha Especial", "Coxinha premium", new BigDecimal("10.00"), CategoriaItemCardapio.ENTRADA, 1L, null);
+        ItemCardapio atualizado = new ItemCardapio(id, "Coxinha Especial", "Coxinha premium", new BigDecimal("10.00"), CategoriaItemCardapio.ENTRADA, 1L, null);
         when(itemCardapioGateway.existePorId(id)).thenReturn(true);
         when(itemCardapioGateway.salvar(entrada)).thenReturn(atualizado);
 

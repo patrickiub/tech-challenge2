@@ -24,6 +24,8 @@ public record ItemCardapioRequestDTO(
         CategoriaItemCardapio categoria,
 
         @NotNull(message = "Restaurante é obrigatório")
-        Long restauranteId
+        Long restauranteId,
+
+        String fotoPath
 ) {
 }
